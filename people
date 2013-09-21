@@ -1,0 +1,118 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
+    "basePath": "http://api.gsa.apievangelist.com/v1",
+    "resourcePath": "/people",
+    "produces": [
+        "application/json"
+    ],
+    "apis": [
+        {
+            "path": "/people/",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Finds all people",
+                    "notes": "Returns a list of all people, allowing you to filter by state and keyword query. You can also apply a custom callback to the JSON response.",
+                    "nickname": "getFacilities",
+                    "type": "facilities",
+                    "parameters": [
+                        {
+                            "name": "query",
+                            "description": "a text query to search across facilities",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query"
+                        },
+                        {
+                            "name": "callback",
+                            "description": "the callback for API call",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 404,
+                            "message": "There are no people"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "path": "/people/{id}",
+            "operations": [
+                {
+                    "method": "GET",
+                    "summary": "Retrieve a person using its ID",
+                    "notes": "Returns a people detail",
+                    "type": "people",
+                    "nickname": "getOffice",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "parameters": [
+                        {
+                            "name": "id",
+                            "description": "people id for the office, notice this is in the path, not a query variable",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "integer",
+                            "paramType": "path"
+                        },
+                        {
+                            "name": "callback",
+                            "description": "the callback for API call",
+                            "required": false,
+                            "allowMultiple": false,
+                            "dataType": "string",
+                            "paramType": "query"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "Invalid Application Information ID supplied"
+                        },
+                        {
+                            "code": 404,
+                            "message": "People not found"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "Offices": {
+            "id": "people",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "first_name": {
+                    "type": "string"
+                },
+                "last_name": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
