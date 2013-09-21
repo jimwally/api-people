@@ -14,8 +14,8 @@
                     "method": "GET",
                     "summary": "Finds all people",
                     "notes": "Returns a list of all people, allowing you to filter by state and keyword query. You can also apply a custom callback to the JSON response.",
-                    "nickname": "getFacilities",
-                    "type": "facilities",
+                    "nickname": "getPeople",
+                    "type": "people",
                     "parameters": [
                         {
                             "name": "query",
@@ -23,15 +23,18 @@
                             "required": false,
                             "allowMultiple": false,
                             "dataType": "string",
-                            "paramType": "query"
-                        },
-                        {
-                            "name": "callback",
-                            "description": "the callback for API call",
-                            "required": false,
-                            "allowMultiple": false,
-                            "dataType": "string",
-                            "paramType": "query"
+                            "paramType": "query",
+                            "applyTo": [
+                                {
+                                    "propery": "first_name"
+                                },
+                                {
+                                    "propery": "last_name"
+                                },
+                                {
+                                    "propery": "title"
+                                }
+                            ]
                         }
                     ],
                     "produces": [
