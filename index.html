@@ -35,9 +35,12 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <script type="text/javascript">
+    
+        var $Path = '/swagger/simple-api/api-people/api.json';
+    
         $(function () {
             window.swaggerUi = new SwaggerUi({
-                url: "http://api.gsa.apievangelist.com/swagger/People/api.json",
+                url: "http://api.gsa.apievangelist.com" + $Path,
                 dom_id: "swagger-ui-container",
                 supportedSubmitMethods: ['get', 'post', 'put', 'delete'],
                 onComplete: function(swaggerApi, swaggerUi){
