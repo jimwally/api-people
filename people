@@ -26,13 +26,13 @@
                             "paramType": "query",
                             "applyTo": [
                                 {
-                                    "propery": "first_name"
+                                    "property": "first_name"
                                 },
                                 {
-                                    "propery": "last_name"
+                                    "property": "last_name"
                                 },
                                 {
-                                    "propery": "title"
+                                    "property": "title"
                                 }
                             ]
                         }
