@@ -13,7 +13,7 @@
                 {
                     "method": "GET",
                     "summary": "Finds all people",
-                    "notes": "Returns a list of all people, allowing you to filter by state and keyword query. You can also apply a custom callback to the JSON response.",
+                    "notes": "Returns a list of all people, allowing you to filter by state and keyword query.",
                     "nickname": "getPeople",
                     "type": "people",
                     "parameters": [
